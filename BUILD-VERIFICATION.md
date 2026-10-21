@@ -10,7 +10,7 @@ The delivered source was built in this workspace using Linux x86_64, a full Ecli
 | `:app:lintDebug` | PASS — 0 errors, 7 warnings; one Compose runtime lint registry was skipped for API incompatibility |
 | XML resources and manifest parsing | PASS — all 10 XML files parsed |
 | Device/emulator execution | PASS — android app succesfully installed and functioning properly |
-| UI, camera, print service, and import/export device acceptance |  
+| UI, camera, print service, and import/export device acceptance | PASS - camera functioning properly, ui is  responsive, print service is not tested, import and export device acceptance is not tested properly | 
 
 ## Unit test results
 
