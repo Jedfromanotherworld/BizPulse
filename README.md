@@ -1,7 +1,7 @@
 # BizPulse
 
 **GitHub:** https://github.com/Jedfromanotherworld/BizPulse  
-**Start here for push/pull:** [START-HERE-GITHUB.md](START-HERE-GITHUB.md)
+
 
 Small Business Management for Android: POS, inventory, analytics, and audit history.
 
@@ -9,20 +9,6 @@ Small Business Management for Android: POS, inventory, analytics, and audit hist
 **Version:** 1.0.0  
 **Package:** `com.bizpulse.app`  
 **Platform:** Android 8.0+ (API 26); compile/target API 34
-
-## Open in Android Studio
-
-1. Extract `BizPulse-GitHub-Ready.zip` to a writable folder, such as `C:\AndroidProjects`.
-2. Open Android Studio Hedgehog or a version that supports Android Gradle Plugin 8.2.2. Select **Open**, then the extracted **BizPulse** folder containing `settings.gradle.kts`.
-3. In **Settings → Build, Execution, Deployment → Build Tools → Gradle**, select **JDK 17** as the Gradle JDK. Do not use JDK 21 for this pinned toolchain.
-4. In SDK Manager, install **Android SDK Platform 34**, **Build-Tools 34.0.0**, and **Platform-Tools**. Accept the SDK licenses.
-5. Allow Gradle sync to finish. The first sync requires internet access to Google Maven, Maven Central, the Gradle Plugin Portal, and Gradle distributions.
-6. Choose an API 26+ emulator or enable USB debugging on a physical Android phone. Select the **app** run configuration and press **Run**.
-7. Log in using the matching role and demo credentials below. Seed data is created only when the database is first created.
-
-The official Gradle 8.2 wrapper JAR and scripts are included. No manual source-file copying is necessary. Android Studio creates machine-specific `local.properties`; it is intentionally excluded from the archive.
-
-If using Git, clone your own uploaded repository, enter its directory, and follow steps 2–7. No remote repository has been created by this delivery.
 
 ## Demo credentials
 
@@ -52,19 +38,6 @@ If using Git, clone your own uploaded repository, enter its directory, and follo
 Kotlin 1.9.22, Compose compiler 1.5.8, Compose BOM 2024.02.02, Room 2.6.1,
 Hilt 2.50, Navigation Compose 2.7.7, DataStore Preferences 1.0.0, Coroutines,
 Gradle KTS, JDK 17, AGP 8.2.2, Gradle 8.2. Versions are pinned to match API 34.
-
-```mermaid
-flowchart TD
-  UI["Compose screens"] --> VM["Screen ViewModels • StateFlow"]
-  VM --> Repo["Repositories • validation and authorization"]
-  Repo --> Room["Room • SQLite transactions"]
-  VM --> Session["DataStore • local session"]
-  Room --> Store["AppStore • reactive snapshots"]
-  Session --> Store
-  Store --> VM
-```
-
-`data/model` uses type aliases for immutable database records; `CartItem` is a distinct domain model. `AppStore` combines database streams for this small local dataset. Per-screen ViewModels expose UI/form state as StateFlow. Database work uses IO dispatchers; Room suspending operations also use Room's query/transaction executors.
 
 ## Financial and record rules
 
@@ -104,7 +77,7 @@ See `screenshots/README.md` for the device-capture checklist and `Documentation/
 
 ## Developers and attribution
 
-Prepared for JED's BizPulse project using the supplied specification and school references, with AI-assisted implementation. The team must record its own member names, individual contributions, Git history, and evaluation results before submission; these were not supplied and are not fabricated here.
+Prepared for BizPulse project using the supplied specification and school references, with AI-assisted implementation. The team must record its own member names, individual contributions, Git history, and evaluation results before submission; these were not supplied and are not fabricated here.
 
 Libraries: AndroidX (Apache 2.0), Kotlin/Coroutines (Apache 2.0), Dagger/Hilt (Apache 2.0), ZXing Android Embedded (Apache 2.0). Source code is MIT licensed; third-party dependencies keep their own licenses. See `LICENSE` and `Documentation/THIRD-PARTY.md`.
 
