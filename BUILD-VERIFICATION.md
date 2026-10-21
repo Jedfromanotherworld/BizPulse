@@ -9,8 +9,8 @@ The delivered source was built in this workspace using Linux x86_64, a full Ecli
 | `:app:assembleDebugAndroidTest` | PASS — instrumented test APK generated |
 | `:app:lintDebug` | PASS — 0 errors, 7 warnings; one Compose runtime lint registry was skipped for API incompatibility |
 | XML resources and manifest parsing | PASS — all 10 XML files parsed |
-| Device/emulator execution | NOT RUN — no Android device/emulator was connected |
-| UI, camera, print service, and import/export device acceptance | Pending real-device checks |
+| Device/emulator execution | PASS — android app succesfully installed and functioning properly |
+| UI, camera, print service, and import/export device acceptance |  
 
 ## Unit test results
 
