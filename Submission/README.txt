@@ -8,4 +8,4 @@ BIZPULSE — CT-MAD-213
 06-Presentation: Live demonstration outline.
 07-GitHub: Repository URL.
 
-Submission status: Team BIZPULSE, BSIS 2C; instructor Kyle Fabian. Submission date and evaluator fields are intentionally blank. Includes 24 supplied screenshots, 2 video-extracted images, and a video copy with password-entry sections covered. Device results are recorded for October 19, 2026: barcode scanning failed; other functions were reported working, with evidence limits documented in TESTING.md. Original 1.0.0 APK/source retained; no new build or barcode fix. Formal user evaluation is not supplied.
+
