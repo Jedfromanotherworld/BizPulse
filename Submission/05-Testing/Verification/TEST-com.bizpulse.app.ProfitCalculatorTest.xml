@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bizpulse.app.ProfitCalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-13T10:10:51" hostname="ddefde8b17d2" time="0.001">
+  <properties/>
+  <testcase name="profitIsRevenueMinusCost" classname="com.bizpulse.app.ProfitCalculatorTest" time="0.0"/>
+  <testcase name="lossesArePreserved" classname="com.bizpulse.app.ProfitCalculatorTest" time="0.0"/>
+  <testcase name="marginIsSafeAtZero" classname="com.bizpulse.app.ProfitCalculatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bizpulse.app.CartLogicTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-13T10:10:51" hostname="ddefde8b17d2" time="0.017">
+  <properties/>
+  <testcase name="emptyCart" classname="com.bizpulse.app.CartLogicTest" time="0.008"/>
+  <testcase name="subtotalVatAndTotal" classname="com.bizpulse.app.CartLogicTest" time="0.0"/>
+  <testcase name="decimalPricesRoundOnceAtCheckout" classname="com.bizpulse.app.CartLogicTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
