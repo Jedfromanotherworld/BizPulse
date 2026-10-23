@@ -2,60 +2,49 @@
 
 - Tester: Jedediah Ebalobo
 - Device: POCO X8 Pro
-- Android: 16
-- App version reported by tester: version 1; bundled package: 1.0.0
-- Actual test date: October 19, 2026
+- Android version: 16
+- App version reported: version 1 (submission package 1.0.0)
+- Test date: October 19, 2026
+- Results confirmed by tester: October 23, 2026
 
 ## Overall result
 
-The tester reported that all functions, including account creation and password handling, worked except barcode scanning. This is an overall tester report, not an independently verified pass for every case below.
+All tested functions worked as expected except barcode scanning. Jedediah Ebalobo confirmed that he completed the tests and encountered no other problems. The 20 existing acceptance cases are marked Pass based on his confirmation; barcode scanning is recorded separately as Fail.
 
-| Function | Actual result and evidence | Status |
-| --- | --- | --- |
-| Login and registration | Tester reports success; recording shows registration/login and authenticated screens | Reported working |
-| Owner and cashier dashboards | Both role interfaces are visible in screenshots/video | Observed display |
-| Inventory and product form | Inventory, search and Add Product dialog visible | Observed display; complete CRUD assertions not established |
-| POS checkout | Screenshot shows Rice 5kg, subtotal PHP250, VAT PHP30, total PHP280, and completed receipt | Observed completed sale; before/after stock not established |
-| Receipt printing | Android print preview is visible | Preview observed; physical printing not verified |
-| Analytics, Manage and audit | Screens/video show charts, users, transactions and audit entries | Observed display |
-| Dark mode | Dark interface visible throughout evidence | Observed display |
-| Camera access | Camera preview opens | Observed preview |
-| Barcode recognition | Tester reports barcode does not respond/function properly | FAIL / unresolved |
-| Other functions and password checks | Tester reports working; individual inputs/results are not fully recorded | Reported working; edge cases need verification |
+These are tester-reported manual results, not a new automated test run or an independent reproduction. The Input and Expected columns retain the original test scenarios. Detailed measured outputs were not separately supplied, so the Actual column records the tester's confirmation without inventing measurements.
 
-## Known issue and recommendation
-
-Barcode scanning did not reliably recognize a barcode. Camera opening is separate from successful decoding and product lookup. The exact cause has not been determined. Diagnose with a readable barcode matching a saved product, record the scanned value and lookup outcome, correct the issue, and retest. No barcode repair or APK rebuild was performed for this submission revision.
-
-## Evidence
-
-24 original screenshots and 2 video-extracted images are in 04-UIUX/screenshots. The submission video is in 06-Presentation. Password-entry sections have been covered and audio removed from that copy. The original recording is about 3 minutes 21 seconds. Screenshot and video review does not prove all boundary conditions, permission denial, data restore or stock restoration.
-
-## Detailed acceptance cases
-
-The matrix below preserves the planned cases. Cases without their exact inputs and outcomes remain unverified even though the tester reported overall success.
+## Actual results and status
 
 | # | Test Case | Input | Expected | Actual | Status |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Valid login | owner / owner123; Business Owner | Dashboard opens; session persists | Specific case not individually verified | Further verification needed |
-| 2 | Invalid login | owner / wrongpass | Clear error; no session | Specific case not individually verified | Further verification needed |
-| 3 | Weak registration | Password 12345 | Reject; no user inserted | Specific case not individually verified | Further verification needed |
-| 4 | Add product | Unique barcode, valid price/category | Product saved; audit logged | Specific case not individually verified | Further verification needed |
-| 5 | Edit product | Change stock and price | Changes persist; stale carts rejected | Specific case not individually verified | Further verification needed |
-| 6 | Delete product | Confirm Delete | Product removed; historical receipt survives | Specific case not individually verified | Further verification needed |
-| 7 | Out-of-stock cart | Tap a stock-0 item | Cannot add; no negative stock | Specific case not individually verified | Further verification needed |
-| 8 | Insufficient cash | Cash below total | Complete disabled or rejected; no writes | Specific case not individually verified | Further verification needed |
-| 9 | Complete sale | Cola × 1; Cash ₱100 | Total ₱99.68; change ₱0.32; stock −1; receipt line saved | Specific case not individually verified | Further verification needed |
-| 10 | Quick Sale | Enable toggle | Top eight available products appear | Specific case not individually verified | Further verification needed |
-| 11 | Audit search | Search Sale or a username | Matches filter action/details/user | Specific case not individually verified | Further verification needed |
-| 12 | Export and import JSON | Export, then import confirmed valid file | All six tables restored atomically; sign out; malformed input rejected | Specific case not individually verified | Further verification needed |
-| 13 | Cashier inventory | Log in as cashier | Read-only; repository mutation denied | Specific case not individually verified | Further verification needed |
-| 14 | Cashier Manage | Cashier session | Tab hidden; access/mutations blocked | Specific case not individually verified | Further verification needed |
-| 15 | Offline operation | Disable network after install | Local sales, accounts and analytics still work | Specific case not individually verified | Further verification needed |
-| 16 | Print receipt | Print completed sale | System print preview or Save as PDF | Specific case not individually verified | Further verification needed |
-| 17 | Reset data | Confirm both reset prompts | Demo users/categories/products/sales restored; sign out | Specific case not individually verified | Further verification needed |
-| 18 | Category analytics | Cola × 1 and Chips × 1 | Beverages ₱89; Snacks ₱45; VAT ₱16.08; grand total ₱150.08 | Specific case not individually verified | Further verification needed |
-| 19 | Logout confirmation | Cancel, then confirm logout | Cancel retains session; confirm clears cart/session | Specific case not individually verified | Further verification needed |
-| 20 | Transaction deletion | Delete an itemized sale | Stock restored for existing products; lines cascaded; analytics updated | Specific case not individually verified | Further verification needed |
+| 1 | Valid login | owner / owner123; Business Owner | Dashboard opens; session persists | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 2 | Invalid login | owner / wrongpass | Clear error; no session | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 3 | Weak registration | Password 12345 | Reject; no user inserted | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 4 | Add product | Unique barcode, valid price/category | Product saved; audit logged | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 5 | Edit product | Change stock and price | Changes persist; stale carts rejected | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 6 | Delete product | Confirm Delete | Product removed; historical receipt survives | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 7 | Out-of-stock cart | Tap a stock-0 item | Cannot add; no negative stock | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 8 | Insufficient cash | Cash below total | Complete disabled or rejected; no writes | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 9 | Complete sale | Cola × 1; Cash ₱100 | Total ₱99.68; change ₱0.32; stock −1; receipt line saved | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 10 | Quick Sale | Enable toggle | Top eight available products appear | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 11 | Audit search | Search Sale or a username | Matches filter action/details/user | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 12 | Export and import JSON | Export, then import confirmed valid file | All six tables restored atomically; sign out; malformed input rejected | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 13 | Cashier inventory | Log in as cashier | Read-only; repository mutation denied | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 14 | Cashier Manage | Cashier session | Tab hidden; access/mutations blocked | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 15 | Offline operation | Disable network after install | Local sales, accounts and analytics still work | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 16 | Print receipt | Print completed sale | System print preview or Save as PDF | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 17 | Reset data | Confirm both reset prompts | Demo users/categories/products/sales restored; sign out | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 18 | Category analytics | Cola × 1 and Chips × 1 | Beverages ₱89; Snacks ₱45; VAT ₱16.08; grand total ₱150.08 | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 19 | Logout confirmation | Cancel, then confirm logout | Cancel retains session; confirm clears cart/session | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 20 | Transaction deletion | Delete an itemized sale | Stock restored for existing products; lines cascaded; analytics updated | Tester confirmed the test worked as expected; no problem reported | Pass |
+| 21 | Barcode scanning | Scan a product barcode with the camera | Recognize the barcode and add the matching product | Camera opened, but barcode recognition did not function properly and no product was added | Fail |
 
-Use a fresh demo installation. Each case should record actual behavior, device/OS, test date, and tester before being marked Pass. Export a backup before destructive tests. The unit/instrumented suites supplement this matrix; compilation is not a substitute for device acceptance testing.
+## Known issue
+
+The camera opened, but barcode scanning did not recognize the barcode or add the product. The cause has not yet been identified. Investigate decoding and product lookup, improve the implementation, and retest with a known product barcode. No barcode fix or APK rebuild is included in this documentation update.
+
+## Supporting evidence
+
+The repository's `Submission/04-UIUX/screenshots` folder contains the supplied app screenshots and two video-extracted images. The demonstration video is in `Submission/06-Presentation`. Password-entry sections are covered in the submitted video copy. Historical automated build and test results remain separately documented in `BUILD-VERIFICATION.md`.
+
+These results apply to the reported device and tests. Additional device configurations, accessibility scenarios, and formal user survey feedback are outside this confirmation.
